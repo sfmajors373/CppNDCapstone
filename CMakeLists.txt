@@ -4,5 +4,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 find_package(Torch REQUIRED)
 
-add_executable(mnist mnist.cpp net.cpp)
+add_executable(mnist mnist.cpp net.cpp dataloaders.tpp)
 target_link_libraries(mnist ${TORCH_LIBRARIES})

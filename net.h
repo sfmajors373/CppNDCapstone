@@ -1,3 +1,6 @@
+#ifndef SFM_NET_H
+#define SFM_NET_H
+
 #include <torch/torch.h>
 
 struct Net : torch::nn::Module {
@@ -10,3 +13,5 @@ struct Net : torch::nn::Module {
     torch::nn::Linear fc2;
     torch::nn::Linear fc3;
 };
+
+#endif
