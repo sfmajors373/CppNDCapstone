@@ -16,7 +16,7 @@ const int64_t trainBatchSize = 128;
 const int64_t testBatchSize = 1000;
 
 // num epochs
-const int64_t numEpochs = 5;
+const int64_t numEpochs = 10;
 
 // logging
 const int64_t loggingInterval = 10;
@@ -79,6 +79,7 @@ void test(
               torch::Reduction::Sum
             ).template item<float>();
         auto pred = output.argmax(1);
+        // std::cout << "Pred: " << pred << "\n" << std::endl;
         correct += pred.eq(targets).sum().template item<int64_t>();
     }
 
@@ -93,6 +94,7 @@ void test(
 
 int main()
 {
+  // figure out device and name it
   torch::DeviceType device_type;
   if (torch::cuda::is_available())
   {
