@@ -1,9 +1,10 @@
-#include <torch/torch.h>
 #include <cstddef>
 #include <cstdio>
 #include <iostream>
 #include <string>
 #include <vector>
+
+#include "net.h"
 
 // Where to find dataset
 const char* dataRoot = "./data";
@@ -19,45 +20,6 @@ const int64_t numEpochs = 5;
 
 // logging
 const int64_t loggingInterval = 10;
-
-struct Net : torch::nn::Module
-{
-    Net()
-      // Conv2d model(Conv2dOptions(3, 2, 3).stride(1).bias(false));
-      // ConvOptions(int_64_t in_channels, int64_t out_channels, kernel_size);
-      :  conv1(torch::nn::Conv2dOptions(1, 6, /*kernel_size=*/5).padding(2)),
-         conv2(torch::nn::Conv2dOptions(6, 16, /*kernel_size=*/5)),
-         fc1(400,120),
-         fc2(120,84),
-         fc3(84,10)
-  {
-      register_module("conv1", conv1);
-      register_module("conv2", conv2);
-      register_module("fc1", fc1);
-      register_module("fc2", fc2);
-      register_module("fc3", fc3);
-
-  }
-
-  torch::Tensor forward(torch::Tensor x)
-  {
-      x = torch::sigmoid(conv1->forward(x));
-      x = torch::avg_pool2d(x, 2);
-      x = torch::sigmoid(conv2->forward(x));
-      x = torch::avg_pool2d(x, 2);
-      x = x.view({-1, 400});
-      x = torch::sigmoid(fc1->forward(x));
-      x = torch::sigmoid(fc2->forward(x));
-      x = torch::sigmoid(fc3->forward(x));
-      return torch::log_softmax(x, 1);
-  }
-
-  torch::nn::Conv2d conv1;
-  torch::nn::Conv2d conv2;
-  torch::nn::Linear fc1;
-  torch::nn::Linear fc2;
-  torch::nn::Linear fc3;
-};
 
 template <typename DataLoader>
 void train(
