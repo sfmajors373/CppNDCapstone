@@ -57,6 +57,7 @@ void test(
     for (const auto& batch : data_loader)
     {
         auto data = batch.data.to(device), targets = batch.target.to(device);
+        // std::cout << "Data: " << data << std::endl;
         auto output = model.forward(data);
         test_loss += torch::nll_loss(
               output,
@@ -76,5 +77,25 @@ void test(
         static_cast<double>(correct) / dataset_size
       );
 }
+
+/*
+template <typename DataLoader>
+void predict_image
+(
+    Net& model,
+    torch::Device device,
+    DataLoader& data_loader,
+    size_t dataset_size
+)
+{
+    torch::NoGradGuard no_grad;
+    model.eval();
+    auto output = model.forward(data);
+    auto pred = output.argmax(1);
+
+    std::cout << "Prediction: " << pred << "\n" << std::endl;
+}
+*/
+
 
 #endif

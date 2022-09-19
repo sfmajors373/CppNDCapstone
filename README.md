@@ -18,7 +18,21 @@ Because my interest in C++ stems from my interests in machine learning and artif
 
 ## File Structure
 
+|-CMakeLists.txt
+|-dataloaders.tpp
+|-mnist.cpp
+|-net.h
+|-net.cpp
+|-README.md
+|-build
+|--data
+|--t10k-images-idx1-ubyte
+|--t10k-labels-idx1-ubyte
+|--t10k-images-idx3-ubyte
+|--t10k-labels-idx3-ubyte
+
 ## Class Structure
+As I chose to use libtorch library in this project, I opted to keep in line with its coding style.  Libtorch uses structs and templates more than classes so I have also use structs instead of classes.  I have separated the net definition into its own file so there is a `net.h` and a `net.cpp`.  I have also placed the dataloaders in their own file as `dataloaders.tpp`.  
 
 ## Expected Output
 
@@ -36,8 +50,8 @@ For the completion of the capstone project, I must satisfy four mandatory criter
 
 ### The README indicates which project is chosen
 
- - [ ] The README describes the project you have built.
- - [ ] The README also indicates the file and class structure, along with the expected behavior or output of the program
+ - [x] The README describes the project you have built.
+ - [x] The README also indicates the file and class structure, along with the expected behavior or output of the program
 
 ### The README includes information about each rubric point addressed
 
@@ -45,8 +59,8 @@ For the completion of the capstone project, I must satisfy four mandatory criter
 
 ### The submission must compile and run
 
- - [ ] The project code must compile and run without errors
- - [ ] Code must compile on any reviewer platform
+ - [x] The project code must compile and run without errors
+ - [x] Code must compile on any reviewer platform
 
 ### Item 1
 
