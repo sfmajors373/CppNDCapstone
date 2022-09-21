@@ -3,13 +3,18 @@ Capstone for C++ Nanodegree
 
 # Steps to Build
 
+    install pytorch and opencv for your distro
+
     mkdir build
     cd build
     mkdir data
-    Download MNIST dataset into data directory
+    Download [MNIST dataset](http://yann.lecun.com/exdb/mnist/) into data directory by downloading each of the four links at the top of the article that are the training and test set and unzip them in the data folder to match the file structure found below
     cmake ..
     make
     ./mnist
+
+    You may also download the dataset in .jpg format [here](https://www.kaggle.com/datasets/scolianni/mnistasjpg) and unzip the file in any directory you choose.
+    After the model trains, it will as for a path directory to any of the images in that dataset and return to you the numeral that is written in the image.  You may continue to enter images or submit 'q' to exit the program.
 
 
 # LeNet
@@ -44,8 +49,8 @@ For the completion of the capstone project, I must satisfy four mandatory criter
 
 ### A README with instructions is included with project
 
- - [ ] README is included with the project and has instructions for building/running the project
- - [ ] If any additional libraries are needed to run the project, these are indicated with cross-platform installation instructions.
+ - [x] README is included with the project and has instructions for building/running the project
+ - [x] If any additional libraries are needed to run the project, these are indicated with cross-platform installation instructions.
  - [x] Markdown or pdf: Markdown is chosen
 
 ### The README indicates which project is chosen
@@ -55,7 +60,7 @@ For the completion of the capstone project, I must satisfy four mandatory criter
 
 ### The README includes information about each rubric point addressed
 
- - [ ] The README indicates which rubric points are addressed.  The README also indicates where in the code (i.e. files and line numbers) that the rubric points are addressed.
+ - [x] The README indicates which rubric points are addressed.  The README also indicates where in the code (i.e. files and line numbers) that the rubric points are addressed.
 
 ### The submission must compile and run
 
@@ -63,17 +68,17 @@ For the completion of the capstone project, I must satisfy four mandatory criter
  - [x] Code must compile on any reviewer platform
 
 ### The project reads data from a file and process the data
- - [x] The project reads data from an external file or writes data to a file as part of the necessary operation of the program
+ - [x] The project reads data from an external file or writes data to a file as part of the necessary operation of the program [mnist.cpp, line 88](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L88)
 
 ### The project accepts user input and processes the input
- - [x] The porject accepts input from a user as part of the necessary operation of the program
+ - [x] The porject accepts input from a user as part of the necessary operation of the program [mnist.cpp, line 79](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L79)
 
 ### The project demonstrates an understanding of C++ functions and control structures
- - [x] A variety of control structures are used in the project
+ - [x] A variety of control structures are used in the project [while loop: mnist.cpp, line 74](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L74), [for loop: mnist.cpp, line 100](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L100) 
  - [x] the project is clearly organized into functions
 
 ### Templates generalize functions in the project
- - [x] One function is declared with a template that allows it to accept a generic parameter
+ - [x] One function is declared with a template that allows it to accept a generic parameter [train: dataloaders.tpp, line 11](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/dataloaders.tpp#L11), [test: dataloaders.tpp, line 46](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/dataloaders.tpp#L46)
 
 ### The project uses move semantics to move data, instead of copying it, where possible
- - [x] For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object
+ - [x] For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object [mnist.cpp, line 52](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L52), [mnist.cpp, line 62](https://github.com/sfmajors373/CppNDCapstone/blob/ac77cd613b7c9999ab1e048604d5997769be2e76/mnist.cpp#L62)
