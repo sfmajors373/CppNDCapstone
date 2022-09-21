@@ -86,17 +86,6 @@ int main()
     
     // read image with opencv
     cv::Mat image = cv::imread(user_input);
-    //for (int i = 0; i < 28; i++)
-    //{
-    //    for (int j = 0; j < 28; j++)
-    //    {
-    //        if (image.at<uint8_t>(i,j) <= 50)
-    //        {
-    //            image.at<uint8_t>(i,j) = 0;
-    //        }
-    //    }
-   // }
-    //std::cout << "image " << image << std::endl;
 
     // cv::Mat to torch::Tensor
     torch::Tensor tensor_image = torch::from_blob(
@@ -108,7 +97,6 @@ int main()
           .device(device)).to(torch::kFloat);
 
     // normalize
-    //torch::Tensor normalized_image = (tensor_image - 0.1307) / 0.3081;
     for (int i = 0; i < 28; i++)
     {
         for (int j = 0; j < 28; j++)
@@ -121,9 +109,7 @@ int main()
     model.eval();
 
     auto tensor_squeeze = tensor_image.unsqueeze(0).unsqueeze(0);
-    //std::cout << "tensor_squeeze" << tensor_squeeze << std::endl;
     auto output = model.forward(tensor_squeeze);
-    std::cout << "Output: " << output << "\n" << std::endl;
 
     // argmax
     auto pred = output.argmax(1);

@@ -62,15 +62,18 @@ For the completion of the capstone project, I must satisfy four mandatory criter
  - [x] The project code must compile and run without errors
  - [x] Code must compile on any reviewer platform
 
-### Item 1
+### The project reads data from a file and process the data
+ - [x] The project reads data from an external file or writes data to a file as part of the necessary operation of the program
 
+### The project accepts user input and processes the input
+ - [x] The porject accepts input from a user as part of the necessary operation of the program
 
+### The project demonstrates an understanding of C++ functions and control structures
+ - [x] A variety of control structures are used in the project
+ - [x] the project is clearly organized into functions
 
-### Item 2
+### Templates generalize functions in the project
+ - [x] One function is declared with a template that allows it to accept a generic parameter
 
-
-
-### Item 3
-
-### Item 4
-### Item 5
+### The project uses move semantics to move data, instead of copying it, where possible
+ - [x] For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object
