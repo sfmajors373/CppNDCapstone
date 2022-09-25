@@ -3,7 +3,21 @@ Capstone for C++ Nanodegree
 
 # Steps to Build
 
-    install pytorch and opencv for your distro
+    install libtorch and opencv for your distro
+    for me the command was `sudo pacman -S python-pytorch` and `sudo pacman -S opencv`
+    this will only work if you use pacman as a package manager (Arch, Manjaro, etc).
+
+    I tend not to include instructions on how to install packages on other distros as I can not test it, but the following instructions should help for installing libtorch:
+
+    wget https://download.pytorch.org/libtorch/nightly/cpu/libtorch-shared-with-deps-latest.zip
+    unzip libtorch-shared-with-deps-latest.zip
+
+    If this does not work, try the installation [instructions](https://pytorch.org/cppdocs/installing.html)
+
+    For opencv:
+    Please see the installation [page](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html).  This should work for Ubuntu.
+    [Here](https://www.tutorialspoint.com/how-to-install-opencv-for-cplusplus-in-windows) is a tutorial for Windows.
+    And finally, [here](https://www.geeksforgeeks.org/how-to-install-opencv-for-c-on-macos/) is for Mac.
 
     mkdir build
     cd build
