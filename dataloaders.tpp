@@ -57,7 +57,6 @@ void test(
     for (const auto& batch : data_loader)
     {
         auto data = batch.data.to(device), targets = batch.target.to(device);
-        // std::cout << "Data: " << data << std::endl;
         auto output = model.forward(data);
         test_loss += torch::nll_loss(
               output,

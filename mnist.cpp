@@ -24,19 +24,6 @@ int main()
 {
   // figure out device and name it
   torch::DeviceType device_type;
-  /*
-  if (torch::cuda::is_available())
-  {
-      std::cout << "CUDA available!  Training on GPU." << std::endl;
-      device_type = torch::kCUDA;
-      device("cuda:0");
-  } else {
-      std::cout << "Training on CPU." << std::endl;
-      device_type = torch::kCPU;
-      device(device_type);
-  }
-  */
-  // torch::Device device(device_type);
   torch::Device device(torch::kCPU);
 
   Net model;
@@ -104,7 +91,6 @@ int main()
             tensor_image[i][j] = (3.5 * (tensor_image[i][j]/255)) - .5;
         }
     }
-    std::cout << "tensor_image" << tensor_image << std::endl;
 
     model.eval();
 
