@@ -68,6 +68,8 @@ As I chose to use libtorch library in this project, I opted to keep in line with
 ## [](https://github.com/sfmajors373/CppNDCapstone/blob/main/README.md#expected-output)Expected Output
 During training the loss should approach zero as the accuracy approaches 1 (neither actually reaching zero or one).  The program will then ask for a path to a test jpg as input and will return the predicted integer written in the image. (Downloading the above provided link in the Udacity workspace, placed the images in `/root/Downloads/testSet/testSet/`)
 
+![](./images/CppExpectedOutput.png)
+![](./images/CppExpectedOutput2.png)
 
 
 ## [](https://github.com/sfmajors373/CppNDCapstone/blob/main/README.md#rubric)Rubric
